@@ -8,7 +8,7 @@ const StyledTitle = styled.h1`
   color: ${(props) => props.color || "#737373"};
   font-weight: 600;
   padding: 100px 0;
-  text-shadow: 4px 4px 2px rgba(188,177,177,1);
+  text-shadow: 4px 4px 2px rgba(188, 177, 177, 1);
 `;
 
 export const TodoTitle = ({ children, ...props }) => {
