@@ -8,6 +8,7 @@ const AppWrapper = styled.div`
   grid-template-columns: 1fr;
   justify-items: center;
   width: 100%;
+  margin: 0 auto;
 `;
 
 export const App = () => {

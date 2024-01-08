@@ -1,17 +1,20 @@
 import { React } from "react";
 import styled from "styled-components";
-import closed from "../../images/icons/x-button.png";
+import cl from "../../styles/main.module.scss";
 
 const Input = styled.input`
-  padding: 10px 15px;
+  padding: 15px 15px;
   outline: none;
   border: none;
   caret-color: #737373;
   background: #f3f5f9;
   color: #737373;
-  font-size: 28px;
+  font-size: 18px;
   max-width: 500px;
   border-radius: 20px;
+  &::placeholder {
+    font-size: 16px;
+  }
 `;
 
 const ToDoWrapper = styled.div`
@@ -23,17 +26,10 @@ const ToDoWrapper = styled.div`
 
 export const ToDoInput = ({ ...rest }) => {
   return (
-    <div>
-      <div>
-        <ToDoWrapper className="todo__input">
-          <Input {...rest}></Input>
-          <img
-            src={closed}
-            style={{ maxWidth: "30px", marginRight: "10px", cursor: "pointer" }}
-            alt=""
-          />
-        </ToDoWrapper>
-      </div>
+    <div className={cl.input__wrapper}>
+      <ToDoWrapper className={cl.input}>
+        <Input {...rest}></Input>
+      </ToDoWrapper>
     </div>
   );
 };
