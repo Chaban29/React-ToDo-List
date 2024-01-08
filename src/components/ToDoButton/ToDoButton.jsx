@@ -2,11 +2,13 @@ import styled from "styled-components";
 import React from "react";
 
 const Button = styled.button`
-  background: linear-gradient(
-    90deg,
-    rgba(29, 29, 176, 1) 50%,
-    rgba(2, 0, 36, 1) 100%,
-    rgba(0, 212, 255, 0.960471044014851) 100%
+  background-image: radial-gradient(
+    circle at 17.19% 72.97%,
+    #00ffff 0,
+    #00d9ff 25%,
+    #0a9ed5 50%,
+    #27688c 75%,
+    #223b4e 100%
   );
   border: none;
   padding: 12px 15px;

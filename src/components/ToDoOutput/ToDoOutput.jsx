@@ -10,8 +10,8 @@ const OutputTitle = styled.div`
   background: #f3f5f9;
   color: #737373;
   font-size: 18px;
-  max-width: 400px;
-  margin: 20px auto;
+  width: 540px;
+  margin: 20px 0;
   border-radius: 20px;
   padding: 15px 10px;
 `;
