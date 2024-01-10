@@ -1,8 +1,8 @@
 import { ToDoInput } from "../ToDoInput/ToDoInput";
-import { ToDoButton } from "../ToDoButton/ToDoButton";
 import styled from "styled-components";
 import cl from "../../styles/main.module.scss";
-import closed from "../../images/icons/free-icon-close-10337623.png";
+import CancelIcon from "@mui/icons-material/Cancel";
+import Button from "@mui/material/Button";
 import { useState } from "react";
 
 const Form = styled.form`
@@ -17,6 +17,7 @@ const InputWrapper = styled.div`
   display: flex;
   align-items: center;
   border-radius: 20px;
+  padding: 0px 10px;
 `;
 
 export const ToDoForm = ({ addTodo }) => {
@@ -46,14 +47,22 @@ export const ToDoForm = ({ addTodo }) => {
             type="text"
             placeholder="What is the task today?"
           />
-          <img
+          <CancelIcon
             onClick={clearInput}
-            src={closed}
-            style={{ maxWidth: "30px", marginRight: "10px", cursor: "pointer" }}
-            alt="closed icon"
+            style={{ cursor: "pointer", color: "#666" }}
           />
         </InputWrapper>
-        <ToDoButton type="submit">Add Task</ToDoButton>
+        <Button
+          style={{
+            padding: "15px",
+            fontSize: "18px",
+            borderRadius: "20px",
+            color: "#666",
+          }}
+          type="submit"
+        >
+          Add Task
+        </Button>
       </Form>
     </div>
   );

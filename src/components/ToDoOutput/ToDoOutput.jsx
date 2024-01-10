@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import edit from "../../images/icons/free-icon-edit-tools-9800957.png";
-import closed from "../../images/icons/free-icon-close-10337623.png";
 import cl from "../../styles/main.module.scss";
+import CancelIcon from "@mui/icons-material/Cancel";
+import BorderColorIcon from "@mui/icons-material/BorderColor";
 
 const OutputTitle = styled.div`
   display: flex;
@@ -16,21 +16,16 @@ const OutputTitle = styled.div`
   padding: 15px 10px;
 `;
 
-export const TodoOutput = ({ task }) => {
+export const TodoOutput = ({ task, deleteTodoItem }) => {
   return (
     <div>
       <OutputTitle>
         <h4>{task.task}</h4>
         <div className={cl.btn__wrapper}>
-          <img
-            src={edit}
-            style={{ maxWidth: "25px", cursor: "pointer" }}
-            alt="edit icon"
-          />
-          <img
-            src={closed}
-            style={{ maxWidth: "25px", cursor: "pointer" }}
-            alt="closed icon"
+          <BorderColorIcon style={{ cursor: "pointer" }} />
+          <CancelIcon
+            style={{ cursor: "pointer", color: "#666" }}
+            onClick={() => deleteTodoItem(task.id)}
           />
         </div>
       </OutputTitle>
