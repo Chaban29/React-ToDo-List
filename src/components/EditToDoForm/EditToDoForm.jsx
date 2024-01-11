@@ -8,7 +8,6 @@ import { useState } from "react";
 const Form = styled.form`
   display: flex;
   align-items: center;
-  gap: 30px;
   justify-content: center;
 `;
 
@@ -20,8 +19,8 @@ const InputWrapper = styled.div`
   padding: 0px 10px;
 `;
 
-export const ToDoForm = ({ addTodo }) => {
-  const [value, setValue] = useState('');
+export const EditToDoForm = ({ editTodo, task, deleteTodoItem }) => {
+  const [value, setValue] = useState(task.task);
 
   const handleValueChange = (event) => {
     setValue(event.target.value);
@@ -29,11 +28,7 @@ export const ToDoForm = ({ addTodo }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addTodo(value);
-    setValue("");
-  };
-
-  const clearInput = () => {
+    editTodo(value, task.id);
     setValue("");
   };
 
@@ -45,10 +40,10 @@ export const ToDoForm = ({ addTodo }) => {
             value={value}
             onChange={handleValueChange}
             type="text"
-            placeholder="What is the task today?"
+            placeholder="Update Task"
           />
           <CancelIcon
-            onClick={clearInput}
+            onClick={() => deleteTodoItem(task.id)}
             style={{ cursor: "pointer", color: "#666" }}
           />
         </InputWrapper>
@@ -61,7 +56,7 @@ export const ToDoForm = ({ addTodo }) => {
           }}
           type="submit"
         >
-          Add Task
+          Update Task
         </Button>
       </Form>
     </div>
